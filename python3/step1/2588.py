@@ -1,0 +1,10 @@
+#https://www.acmicpc.net/problem/2588
+a=int(input())
+b=int(input())
+i_3=b%10
+i_4=(b%100)//10
+i_5=b//100
+print(a*i_3)
+print(a*i_4)
+print(a*i_5)
+print(a*b)
