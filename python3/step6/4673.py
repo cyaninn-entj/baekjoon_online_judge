@@ -17,7 +17,7 @@ def selfnumber(number) :
 for i in range(1, 10001) :
     result=selfnumber(i)
     if result!=0 :
-        print(result)
+        print(result)\
 
 
 
