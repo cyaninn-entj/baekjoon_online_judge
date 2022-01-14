@@ -1,18 +1,15 @@
 #https://www.acmicpc.net/problem/1157
-usr_in=input()
-up_usr_in=usr_in.upper()
-set_usr_in=set(up_usr_in)
+usr_in=input().upper()
+set_usr_in=list(set(usr_in))
 
-count_ls=[]
-setusrin_countls=[]
-for i in up_usr_in :
-    count_ls.append(up_usr_in.count(i))
+cnt_ls=[0]*len(set_usr_in)
+#print(cnt_ls)
 
-for j in set_usr_in :
-    setusrin_countls.append(up_usr_in.count(j))
-
-if setusrin_countls.count(max(setusrin_countls))>1 :
-    print('?')
-else :
-    result=up_usr_in[count_ls.index(max(count_ls))]
-    print(result)
+for i, cht in enumerate(set_usr_in) :
+    cnt_ls[i] = usr_in.count(cht)
+    
+if cnt_ls.count(max(cnt_ls)) == 1 :
+    max_idx = cnt_ls.index(max(cnt_ls))
+    print(set_usr_in[max_idx])
+else : 
+    print("?")
