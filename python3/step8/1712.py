@@ -2,17 +2,22 @@
 
 A,B,C=input().split()
 
-outlay, income=0,0
+perA=1
+perB=int(B)/int(A)
+perC=int(C)/int(A)
+
 X=1
+income=perC-perB
+outlay=0
+
 while True :
-    if int(B)>=int(C) :
+    if perB>=perC :
         X= -1
         break;
-    outlay=int(A)/X
-    income=int(C)-int(B)
-    X+=1
+    outlay=perA/X
     #print(X, outlay, income)
-    if outlay <= income :
+    if outlay < income :
         break;
-    
+    X+=1
+
 print(X)
