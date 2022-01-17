@@ -8,8 +8,8 @@ while True :
     if int(B)>=int(C) :
         X= -1
         break;
-    outlay=int(A)+(int(B)*X)
-    income=int(C)*X
+    outlay=int(A)/X
+    income=int(C)-int(B)
     X+=1
     #print(X, outlay, income)
     if outlay <= income :
