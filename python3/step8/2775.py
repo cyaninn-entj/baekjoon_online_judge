@@ -1,28 +1,23 @@
 #https://www.acmicpc.net/problem/2775
 
-def hmp(k,n) :
-    floor=k
+def hmp(f,n) :
+    floor=f
     num=n
-    floor_ls=[]
-    _sum=0
-    if floor>1 :
-        for i in range(1, n+1) :
-            floor_ls.append( hmp(floor-1,i) )
-    else : 
-        for i in range(1, n+1) :
-            _sum+=i
-        return _sum
-    result=sum(floor_ls)
-    #print(floor_ls)
-    return result
+    floor_ls=[x for x in range(1,num+1)]
+    for i in range(floor):
+        for j in range(1, num):
+            floor_ls[j] += floor_ls[j-1]
+        #print(floor_ls)  # 프린트문을 추가
+    
+    return (floor_ls[num-1])
 
 
 _t=int(input())
 val=[]
 for j in range(0,_t) :
-    k=int(input())
+    f=int(input())
     n=int(input())
-    val.append(hmp(k,n))
+    val.append(hmp(f,n))
     
 for l in range(0,_t) :
     print(val[l])
