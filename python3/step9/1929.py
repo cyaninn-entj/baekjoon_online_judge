@@ -1,23 +1,19 @@
 #https://www.acmicpc.net/problem/1929
 
 def pn(n,m) :
-    start=n
+    if n==1 : start=2
+    else : start=n
     end=m
-    no_odd=[]
     for i in range(start,end) :
         cks=1
         for j in range(2,i) :
             if j*j<=end :
                 if i%j==0 : cks=0
                 else : pass
-        if cks==1 : no_odd.append(i)
-    return no_odd
+        if cks==1 : print(i)
+    return 0
                 
     
 _n, _m=map(int, input().split())
-
 pn_ls=pn(_n,_m)
 #print(pn_ls)
-
-for i in range(len(pn_ls)) :
-    print(pn_ls[i])
