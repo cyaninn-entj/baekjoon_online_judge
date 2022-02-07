@@ -1,27 +1,34 @@
 #https://www.acmicpc.net/problem/1011
 
 def lightyear(x,y) :
-    pos=x+1
-    time=1
-    dist=1
-    
-    while True :
-        if pos < y-1 :
-            pass
-        elif pos==y-1 :
-            time+=1
-            break;
-        elif pos >= y :
-            time+=1
-            break;
-        dist+=1
-        pos+=dist
-        time+=1
-    return time
+    dist=y-x
+    t1,t2=1,2
+    if dist==1 : return 1
+    elif dist==2 : return 2
+    else :
+        group=1
+        while True :
+            ls=[]
+            ls=[k for k in range(4, (2+2*group)+1, 2) ]
+            #print(ls)
+            group_last_n=sum(ls)+2
+            if dist<= group_last_n  :
+                #print(group)
+                #print(group_last_n)
+                break
+            else :
+                group+=1
+                
+    for i in range(0, group) :
+        t1+=2
+        t2+=2
+    if group_last_n-(group+1)<dist : return t2
+    else : return t1
         
 
+
     
-    
+
 n=int(input())
 result=[]
 for i in range(0,n) :
