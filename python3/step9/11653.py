@@ -1,5 +1,4 @@
 #https://www.acmicpc.net/problem/11653
-
 def pn(num) :
     f=0
     if num==1 : return f
@@ -9,11 +8,10 @@ def pn(num) :
     return num
 
 def fz(num) :
-    for i in range(0,len(pn_ls)) :
-        v=int(num/pn_ls[i])
-        #print("v: ",v," pn_ls[i]: ",pn_ls[i]," num: ",num)
-        if num%pn_ls[i]==0 :
-            ls.append(pn_ls[i])
+    for i in pn_ls :
+        v=int(num/i)
+        if num%i==0 :
+            ls.append(i)
             if v==1 :
                 break
             else :
@@ -25,7 +23,7 @@ def fz(num) :
 ls=[]
 pn_ls=[]
 ck_n=0
-for i in range(2,3163) :
+for i in range(2,4999999) :
     ck_n=int(pn(i))
     if ck_n != 0 : pn_ls.append(ck_n)
     else : pass
@@ -37,3 +35,5 @@ else :
     result=fz(n)
     for i in result :
         print(i)
+
+#print(pn_ls)
